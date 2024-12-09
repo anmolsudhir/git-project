@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "apps"
+version = "0.1.0"
+description = ""
+authors = ["Anmol Sudhir <anmolsudhir.2001@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "apps", from = "src" }]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pydriller = "^2.7"
+numpy = "^2.2.0"
+pandas = "^2.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
