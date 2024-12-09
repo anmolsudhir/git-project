@@ -1,5 +1,6 @@
 import sys
 import argparse
+from apps.extractor.utils import Extractor
 
 
 def main():
@@ -18,7 +19,7 @@ def main():
     # Add the type to export commit info in
     extractor.add_argument(
         "--type",
-        choices=["sql", "parquet", "csv"],
+        choices=["parquet", "csv"],
         default="parquet",
         help="Export format for the extracted commit info.",
     )
@@ -26,7 +27,12 @@ def main():
     # Parse arguments
     args = extractor.parse_args()
 
-    print(args)
+    extractor_tool: Extractor = Extractor(
+        type=args.type,
+        today=args.today,
+        repo_url="git@github.com:watch1fy/lambda-backend.git",
+    )
+    print(extractor_tool.extract())
 
 
 if __name__ == "__main__":

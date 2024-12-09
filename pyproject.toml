@@ -12,6 +12,8 @@ python = "^3.13"
 pydriller = "^2.7"
 numpy = "^2.2.0"
 pandas = "^2.2.3"
+pyarrow = "^18.1.0"
+fastparquet = "^2024.11.0"
 
 
 [build-system]
